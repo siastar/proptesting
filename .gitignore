@@ -10,7 +10,14 @@
 ## git push -u origin master
 ## with double wildcard (**) you can ignore folders indipendently of where they're nested
 
-############################### ROCK N' ROLL ####################################################
+############################### ROCK N' ROLL #####################################################
+##echo "# proptesting" >> README.md								##
+##git init			   								##													
+##git add README.md								                ##
+##git commit -m "first commit"								        ##
+##git remote add origin https://github.com/siastar/proptesting.git			        ##
+##git push -u origin master								        ##
+##################################################################################################
 
 ## custom ##
 
