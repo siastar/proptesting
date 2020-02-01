@@ -10,11 +10,13 @@ class App extends React.Component {
       prop1: 'prop 1 original state',
       prop2: 'prop 2 original state'
     };
+    //methods that modify state MUST be bound in the constructor  
     this.onChangeProp1 = this.onChangeProp1.bind(this);
     this.onChangeProp2 = this.onChangeProp2.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
   };
 
+  //whatever is in the componentDidMount autoruns when the component mounts  
   componentDidMount() {
     console.log('parent mounted', this);
 
@@ -26,6 +28,16 @@ class App extends React.Component {
     });
   };
 
+    //this function modifies the state and is triggered by this component child AppChild.js.
+    //AppChild receives this method as prop
+    //props are passed like "special html attributes" with arbitrary names
+    //
+    //  <AppChild
+    //      onChangeProp1={this.onChangeProp1}
+    //    />
+    //
+
+    
   onChangeProp2(e) {
     this.setState({
       prop2: e.target.value

@@ -2,23 +2,21 @@ import React from 'react';
 
 class AppChild extends React.Component {
 
-    constructor(props){
-        super();
-        this.state ={
-            testmessage: 'this is a test message',
-          };
+  constructor(props) {
+    super();
+    this.state = {
+      testmessage: 'this is a test message',
     };
+  };
 
-        componentDidMount(){
-        console.log('child mounted' , this);
-        };
+  componentDidMount() {
+    console.log('child mounted', this);
+  };
 
+  render() {
 
-    
-    render() {
-        
     return (
-        <div>
+      <div>
           <hr/>
           <h3> hello AppChild.js (child)</h3>          
           <p>..............................................</p>
@@ -39,6 +37,20 @@ class AppChild extends React.Component {
                    name="prop1"
                    value={ this.props.prop1 }
                    onChange={this.props.onChangeProp1}
+
+        /* when the event is triggered (onChange) it calls back the connected parent's method */
+        /* in this case the method updates the state with the event target value              */
+        /*                                                                                    */
+        /* ---------------------------------------------------------------------------------- */
+        /*                                                                                    */
+        /* onChangeProp1(e) {                                                                 */
+        /*   this.setState({                                                                  */
+        /*     prop1: e.target.value                                                          */
+        /*   });                                                                              */
+        /* };                                                                                 */
+        /*                                                                                    */
+        /* ---------------------------------------------------------------------------------- */
+              
             />
           </div>
           <br/>
@@ -59,7 +71,7 @@ class AppChild extends React.Component {
           </div>
         </form>
       </div>
-    )
-  }
+    );
+  };
 };
 export default AppChild;
